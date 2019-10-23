@@ -8,8 +8,7 @@ os.environ["CXX"] = "g++"
 #os.environ["LDSHARED"] = "g++"
 
 compile_args = ["-O3", "-std=c++11"]
-#compile_args = ["-O3", "-g"]
-link_args    = ["-lstdc++"]
+link_args    = [""]
 
 cpython_extension_template_module = Extension('cpython_extension_template',
                     language='g++',
@@ -32,10 +31,10 @@ setup (
     version = '1.5',
     author = "Katelyn McNair",
     author_email = "deprekate@gmail.com",
-    description = 'A package for finding repeats in a DNA sequence',
+    description = 'Template to let you quickly create Python C extensions',
     long_description = long_desc,
     long_description_content_type="text/markdown",
-    url =  "https://github.com/deprekate/RepeatFinder",
+    url =  "https://github.com/deprekate/cpython_extension_template",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
