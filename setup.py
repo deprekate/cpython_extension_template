@@ -11,7 +11,7 @@ compile_args = ["-O3", "-std=c++11"]
 #compile_args = ["-O3", "-g"]
 link_args    = ["-lstdc++"]
 
-repeatfinder_module = Extension('repeatfinder',
+cpython_extension_template_module = Extension('cpython_extension_template',
                     language='g++',
                     extra_compile_args=compile_args,
                     extra_link_args=link_args,
@@ -21,14 +21,14 @@ repeatfinder_module = Extension('repeatfinder',
                              os.path.join(os.getcwd(), 'include'),
                     ],
                     library_dirs = [os.getcwd(),],
-                    sources = ['src/repeatfinder.cpp'])
+                    sources = ['src/cpython_extension_template.cpp'])
 
 with open("README.md", "r") as fh:
     long_desc = fh.read()
 
 
 setup (
-    name = 'repeatfinder',
+    name = 'cpython_extension_template',
     version = '1.5',
     author = "Katelyn McNair",
     author_email = "deprekate@gmail.com",
@@ -38,9 +38,9 @@ setup (
     url =  "https://github.com/deprekate/RepeatFinder",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Operating System :: OS Independent",
     ],
     python_requires='>3.5.2',
-    ext_modules = [repeatfinder_module]
+    ext_modules = [cpython_extension_template_module]
 )
